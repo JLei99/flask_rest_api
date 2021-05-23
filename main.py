@@ -187,9 +187,9 @@ class Max_month_type(Resource):
 
 
 api.add_resource(Expenses, "/expenses/<int:expenses_month>/<int:expenses_day>")
-api.add_resource(Max_month_type, "/max/<int:mon>/<string:type>")
+api.add_resource(Max_month_type, "/Max_month_type/<int:mon>/<string:type>")
 api.add_resource(Sum_month_type, "/sum_of_a_type/<int:mon>/<string:type>")
-api.add_resource(Sum_of_a_day, "/sum_of_a_day//<int:expenses_month>/<int:expenses_day>")
+api.add_resource(Sum_of_a_day, "/sum_of_a_day/<int:expenses_month>/<int:expenses_day>")
 api.add_resource(Sum_of_a_month, "/sum_of_a_month/<int:mon>")
 
 
