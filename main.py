@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 #from sqlalchemy import func, asc, desc
 #from sqlalchemy.sql import func
 from sqlalchemy import *
+import os
 
 
 app = Flask(__name__)
@@ -191,5 +192,8 @@ api.add_resource(Sum_month_type, "/sum_of_a_type/<int:mon>/<string:type>")
 api.add_resource(Sum_of_a_day, "/sum_of_a_day//<int:expenses_month>/<int:expenses_day>")
 api.add_resource(Sum_of_a_month, "/sum_of_a_month/<int:mon>")
 
+
+port = int(os.environ.get('PORT', 5000))
+
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(debug=True, host='0.0.0.0', port=port)
